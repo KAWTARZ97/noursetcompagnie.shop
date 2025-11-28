@@ -462,3 +462,507 @@
     }
 
     .universe-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      transform: scale(1.06);
+    }
+
+    .universe-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
+    }
+
+    .universe-content {
+      position: relative;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+    }
+
+    .universe-title {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .universe-text {
+      font-size: 0.84rem;
+      color: var(--text-soft);
+    }
+
+    /* SERVICES / PRODUITS */
+
+    #services {
+      background: var(--bg-soft);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      border-radius: 18px;
+      padding: 18px 16px 18px;
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.85);
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,255,255,0.4);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.95);
+    }
+
+    .service-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+
+    .service-title {
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .service-list {
+      margin: 0;
+      padding-left: 18px;
+      list-style: disc;
+    }
+
+    .service-list li {
+      margin-bottom: 4px;
+    }
+
+    /* CONTACT */
+
+    #contact {
+      background: #040716;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .contact-block {
+      padding: 16px 16px 18px;
+      border-radius: 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
+
+    .contact-block strong {
+      display: inline-block;
+      min-width: 82px;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 6px;
+    }
+
+    .form-card {
+      border-radius: 20px;
+      padding: 18px 16px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 4px;
+      opacity: 0.85;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.26);
+      background: #050814;
+      padding: 8px 10px;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.84rem;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(255,180,0,0.55);
+      background: #070b1c;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .form-row-full {
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      background: #01020a;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.78);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .hero-inner,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 60px;
+      }
+      .universe-grid,
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+      section {
+        padding: 56px 16px;
+      }
+      .universe-grid,
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <div class="logo-circle">
+          <img src="https://avatars.mds.yandex.net/i?id=ab477e3576c02d3e65306804d735cf1c3f710494-4011753-images-thumbs&n=13" alt="Logo N'OURS & COMPAGNIE">
+        </div>
+        <div>
+          <div class="brand-title">N'OURS & COMPAGNIE</div>
+          <div class="brand-sub">Retail sport, loisirs & outdoor – NO&amp;C</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#apropos">À propos</a>
+        <a href="#univers">Univers</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="nav-phone">+33 7 74 22 90 16</div>
+        <a href="#contact" class="btn btn-primary">Contact boutique</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Retail sport & outdoor</div>
+        <h1 class="hero-title">
+          Équipement<span> sport & montagne</span><br>
+          pour une vie en mouvement.
+        </h1>
+        <p class="hero-sub">
+          N’OURS &amp; COMPAGNIE, c’est une sélection d’articles de sport, de loisirs
+          et d’outdoor pensée pour les passionnés : équipements techniques, textile,
+          accessoires et conseils personnalisés.
+        </p>
+
+        <div class="hero-badges">
+          <div class="badge">Sport & lifestyle</div>
+          <div class="badge">Montagne & outdoor</div>
+          <div class="badge">Famille & enfants</div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#univers" class="btn btn-primary">Découvrir nos univers</a>
+          <a href="#contact" class="btn btn-outline">Contacter la boutique</a>
+        </div>
+
+        <p class="hero-note">
+          Besoin d’un conseil produit ou d’un devis équipement ? Nous vous répondons par
+          email ou téléphone, rapidement et avec le sourire.
+        </p>
+
+        <div class="hero-meta">
+          <div><strong>Enseigne :</strong> N’OURS &amp; COMPAGNIE (NO&amp;C)</div>
+          <div><strong>Adresse :</strong> 810 Che de Champagnac, 07150 Salavas – France</div>
+        </div>
+      </div>
+
+      <div class="hero-right-card">
+        <div class="hero-image-wrap">
+          <img src="https://www.sportwalter.it/img/rental/winter-2-zoom.jpg" alt="Outdoor & sports d'hiver">
+        </div>
+        <div class="hero-card-body">
+          <h3>Une boutique pensée pour les amateurs de sport</h3>
+          NO&amp;C combine la proximité d’un commerce de quartier avec une sélection
+          exigeante de marques sport et outdoor. Notre priorité : vous orienter vers
+          l’équipement le plus adapté à votre pratique et à votre budget.
+        </div>
+        <div class="hero-label-strip">
+          <div class="hero-label-chip">Textile & chaussures</div>
+          <div class="hero-label-chip">Matériel sportif</div>
+          <div class="hero-label-chip">Conseils personnalisés</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="apropos">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">À propos de NO&amp;C</div>
+        <h2 class="section-title"><span>N’OURS & COMPAGNIE</span>, votre partenaire sport & loisirs</h2>
+        <p class="section-desc">
+          Située à <strong>Salavas, en Auvergne-Rhône-Alpes</strong>, N’OURS &amp; COMPAGNIE
+          s’inscrit dans l’univers du retail spécialisé : <em>sporting goods, hobby, outdoor
+          et loisirs</em>. Une adresse pour s’équiper, découvrir et se faire conseiller.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Que vous prépariez une saison de ski, une reprise en salle, une sortie
+            randonnée ou simplement un quotidien plus actif, NO&amp;C vous accompagne
+            avec des produits adaptés à chaque usage.
+          </p>
+          <p>
+            Nous sélectionnons nos gammes avec soin, en privilégiant le confort,
+            la durabilité et le style. Du vêtement technique au petit accessoire
+            malin, l’objectif est simple : vous donner envie de bouger, de jouer,
+            de sortir.
+          </p>
+
+          <div class="about-highlight">
+            <strong>Notre promesse :</strong> un conseil humain, des produits bien choisis
+            et une boutique qui vit au rythme du sport, des saisons et de vos envies.
+          </div>
+
+          <div class="about-meta">
+            <div>
+              <span class="about-label">Enseigne</span>
+              <span class="about-value">N’OURS &amp; COMPAGNIE (NO&amp;C)</span>
+            </div>
+            <div>
+              <span class="about-label">Adresse</span>
+              <span class="about-value">810 Che de Champagnac, 07150 Salavas – France</span>
+            </div>
+            <div>
+              <span class="about-label">Contact</span>
+              <span class="about-value">admin@noursetcompagnie.shop · +33 7 74 22 90 16</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-img">
+            <img src="https://s.yimg.com/ny/api/res/1.2/jWP12rKlX70Ww0w_RIDxZw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU-/https://media.zenfs.com/en/just_style_482/d07fba5adc060834174d3699f65e0d7e"
+                 alt="Magasin d'articles de sport">
+          </div>
+          <div class="about-card-body">
+            NO&amp;C est portée par une vision simple : faire du magasin un lieu
+            chaleureux où l’on prend le temps de discuter pratique, bien-être et envies.
+            Ici, on ne vend pas juste un produit, on accompagne un projet.
+            <div class="about-manager">
+              <strong>Responsable magasin :</strong> Kareen BERNAUD
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIVERSE / CATEGORIES -->
+  <section id="univers">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Univers produits</div>
+        <h2 class="section-title"><span>Sport, montagne</span> & moments détente</h2>
+        <p class="section-desc">
+          Une sélection structurée autour de vos pratiques : sport du quotidien,
+          outdoor & montagne, loisirs en famille.
+        </p>
+      </div>
+
+      <div class="universe-grid">
+        <div class="universe-card">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/404/00038868387663.Y3JvcCwzMTI5LDI0NDcsNjksMA.jpg" alt="Sport & training">
+          <div class="universe-overlay"></div>
+          <div class="universe-content">
+            <div class="universe-title">Sport & training</div>
+            <div class="universe-text">
+              Textile, chaussures, accessoires et équipement pour la salle, le running,
+              les sports collectifs et la remise en forme.
+            </div>
+          </div>
+        </div>
+
+        <div class="universe-card">
+          <img src="https://www.sportwalter.it/img/rental/winter-2-zoom.jpg" alt="Montagne & outdoor">
+          <div class="universe-overlay"></div>
+          <div class="universe-content">
+            <div class="universe-title">Montagne & outdoor</div>
+            <div class="universe-text">
+              Tenues chaudes, couches techniques, gants, bonnets, sacs et accessoires
+              pour la neige, la randonnée et les activités nature.
+            </div>
+          </div>
+        </div>
+
+        <div class="universe-card">
+          <img src="https://avatars.mds.yandex.net/i?id=ab477e3576c02d3e65306804d735cf1c3f710494-4011753-images-thumbs&n=13" alt="Loisirs & famille">
+          <div class="universe-overlay"></div>
+          <div class="universe-content">
+            <div class="universe-title">Loisirs & famille</div>
+            <div class="universe-text">
+              Jeux d’extérieur, accessoires fun, idées cadeaux et petits indispensables
+              pour profiter des week-ends et vacances en famille.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / ACCOMPAGNEMENT -->
+  <section id="services">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Accompagnement</div>
+        <h2 class="section-title"><span>Au-delà de la vente</span> : nos services</h2>
+        <p class="section-desc">
+          NO&amp;C, ce n’est pas uniquement des rayons : c’est aussi une écoute, des
+          conseils et un suivi pour que chaque achat soit utile et durable.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-tag">Conseil</div>
+          <div class="service-title">Orientation personnalisée</div>
+          <p>
+            Nous prenons le temps de comprendre votre pratique, votre niveau et vos
+            contraintes pour vous proposer l’équipement le plus adapté.
+          </p>
+          <ul class="service-list">
+            <li>Conseils selon le sport et la fréquence d’usage</li>
+            <li>Aide au choix de tailles et coupes</li>
+            <li>Propositions de tenues complètes</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-tag">Sélection</div>
+          <div class="service-title">Gamme pensée pour la vie réelle</div>
+          <p>
+            Une sélection construite entre technicité, confort et style,
+            avec des produits pour tous les budgets.
+          </p>
+          <ul class="service-list">
+            <li>Produits du quotidien & équipements techniques</li>
+            <li>Textile saisonnier (été / hiver)</li>
+            <li>Accessoires malins & cadeaux sport</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-tag">Proximité</div>
+          <div class="service-title">Relation de confiance</div>
+          <p>
+            Une boutique indépendante, une équipe à taille humaine et un suivi
+            simple : vous savez à qui vous vous adressez.
+          </p>
+          <ul class="service-list">
+            <li>Accueil en magasin ou contact à distance</li>
+            <li>Conseils avant / après achat</li>
+            <li>Échanges possibles selon conditions en vigueur</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Contact & informations</div>
+        <h2 class="section-title"><span>Écrire ou appeler</span> N’OURS & COMPAGNIE</h2>
+        <p class="section-desc">
+          Une question sur un produit, une commande, un stock ou un conseil équipement ?
+          Laissez-nous un message ou contactez directement la boutique.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <div class="contact-block">
+            <p><strong>Enseigne</strong> N’OURS &amp; COMPAGNIE (NO&amp;C)</p>
+            <p>
